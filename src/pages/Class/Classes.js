@@ -7,6 +7,8 @@ import {
     TableHead,
     TableRow,
     TableBody,
+    TableContainer,
+    Paper,
 } from '@mui/material';
 import {
     Link
@@ -82,28 +84,30 @@ export const Classes = () => {
                             There are no existing classes yet.
                         </Typography>
                     </Box> :
-                    <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                    <TableHead>
-                      <TableRow>
-                        <StyledTableCell>#</StyledTableCell>
-                        <StyledTableCell>Class Level</StyledTableCell>
-                        <StyledTableCell>Class Name</StyledTableCell>
-                        <StyledTableCell>Form Teacher</StyledTableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {classes.map((row, index) => (
-                        <TableRow key={index}>
-                          <StyledTableCell component="th" scope="row">
-                            {index + 1}
-                          </StyledTableCell>
-                          <StyledTableCell>{row.level}</StyledTableCell>
-                          <StyledTableCell>{row.name}</StyledTableCell>
-                          <StyledTableCell>{row.formTeacher.name}</StyledTableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
+                    <TableContainer component={ Paper }>
+                        <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                            <TableHead>
+                            <TableRow>
+                                <StyledTableCell>#</StyledTableCell>
+                                <StyledTableCell>Class Level</StyledTableCell>
+                                <StyledTableCell>Class Name</StyledTableCell>
+                                <StyledTableCell>Form Teacher</StyledTableCell>
+                            </TableRow>
+                            </TableHead>
+                            <TableBody>
+                            {classes.map((row, index) => (
+                                <TableRow key={index}>
+                                <StyledTableCell component="th" scope="row">
+                                    {index + 1}
+                                </StyledTableCell>
+                                <StyledTableCell>{row.level}</StyledTableCell>
+                                <StyledTableCell>{row.name}</StyledTableCell>
+                                <StyledTableCell>{row.formTeacher.name}</StyledTableCell>
+                                </TableRow>
+                            ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 }
             </Container>
         </>

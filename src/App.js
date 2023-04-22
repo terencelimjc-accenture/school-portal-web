@@ -48,7 +48,7 @@ export const App = () => {
             }}
           >
             <Routes>
-              <Route path='/' element={<Navigate to='/class' replace={true} />} />
+              <Route path='/*' element={<Navigate to='/class' replace={true} />} />
               <Route path='class' element={<Outlet />} >
                 <Route index element={<Classes />} />
                 <Route path='add' element={<AddClass />} />

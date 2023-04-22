@@ -7,6 +7,8 @@ import {
     TableHead,
     TableRow,
     TableBody,
+    TableContainer,
+    Paper,
 } from '@mui/material';
 import {
     Link
@@ -81,30 +83,32 @@ export const Teachers = () => {
                             There are no existing teachers yet.
                         </Typography>
                     </Box> :
-                    <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                    <TableHead>
-                      <TableRow>
-                        <StyledTableCell>#</StyledTableCell>
-                        <StyledTableCell>Name</StyledTableCell>
-                        <StyledTableCell>Subject</StyledTableCell>
-                        <StyledTableCell>Email</StyledTableCell>
-                        <StyledTableCell>Work Contact</StyledTableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {teachers.map((row, index) => (
-                        <TableRow key={index}>
-                          <StyledTableCell component="th" scope="row">
-                            {index + 1}
-                          </StyledTableCell>
-                          <StyledTableCell>{row.name}</StyledTableCell>
-                          <StyledTableCell>{row.subject}</StyledTableCell>
-                          <StyledTableCell>{row.email}</StyledTableCell>
-                          <StyledTableCell>{row.contactNumber}</StyledTableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
+                    <TableContainer component={ Paper }>
+                        <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                            <TableHead>
+                            <TableRow>
+                                <StyledTableCell>#</StyledTableCell>
+                                <StyledTableCell>Name</StyledTableCell>
+                                <StyledTableCell>Subject</StyledTableCell>
+                                <StyledTableCell>Email</StyledTableCell>
+                                <StyledTableCell>Work Contact</StyledTableCell>
+                            </TableRow>
+                            </TableHead>
+                            <TableBody>
+                            {teachers.map((row, index) => (
+                                <TableRow key={index}>
+                                <StyledTableCell component="th" scope="row">
+                                    {index + 1}
+                                </StyledTableCell>
+                                <StyledTableCell>{row.name}</StyledTableCell>
+                                <StyledTableCell>{row.subject}</StyledTableCell>
+                                <StyledTableCell>{row.email}</StyledTableCell>
+                                <StyledTableCell>{row.contactNumber}</StyledTableCell>
+                                </TableRow>
+                            ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 }
             </Container>
         </>
