@@ -22,4 +22,5 @@ You can find both the react application and nodejs API application at http://ec2
 
 1. For common text field like name, regex should only contain A-Z, a-z, spaces and -.
 2. For mobile text field, only number inputs are allowed. Number has to start with 6, 8 or 9 and has to be 8 characters long.
-3. For emails, they have to fit the typical email validation as per https://www.w3resource.com/javascript/form/email-validation.php
+3. For emails, they have to fit the typical email validation as per https://www.w3resource.com/javascript/form/email-validation.php.
+4. All react routes are redirected to the home page, aka class list.
